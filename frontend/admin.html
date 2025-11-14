@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Rutika's Bakery</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo"><a href="index.html">Rutika's <span>Bakery</span></a></div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="#" id="logoutBtn">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Admin Panel -->
+    <section class="admin-panel">
+        <div class="admin-container">
+            <h2 class="section-title">Admin Dashboard</h2>
+
+            <!-- Admin Tabs -->
+            <div class="admin-tabs">
+                <button class="admin-tab active" data-tab="products">Manage Products</button>
+                <button class="admin-tab" data-tab="orders">Manage Orders</button>
+                <button class="admin-tab" data-tab="users">Manage Users</button>
+            </div>
+
+            <!-- Products Tab -->
+            <div id="productsTab" class="admin-tab-content active">
+                <div class="tab-header">
+                    <h3>Product Management</h3>
+                    <button class="add-product-btn">Add New Product</button>
+                </div>
+                <div class="products-list" id="productsList">
+                    <!-- Products will be loaded here -->
+                </div>
+            </div>
+
+            <!-- Orders Tab -->
+            <div id="ordersTab" class="admin-tab-content">
+                <div class="tab-header">
+                    <h3>Order Management</h3>
+                </div>
+                <div class="orders-list" id="ordersList">
+                    <!-- Orders will be loaded here -->
+                </div>
+            </div>
+
+            <!-- Users Tab -->
+            <div id="usersTab" class="admin-tab-content">
+                <div class="tab-header">
+                    <h3>User Management</h3>
+                </div>
+                <div class="users-list" id="usersList">
+                    <!-- Users will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add Product Modal -->
+    <div id="addProductModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Add New Product</h3>
+            <form id="addProductForm">
+                <div class="form-group">
+                    <label for="productName">Product Name</label>
+                    <input type="text" id="productName" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="productCategory">Category</label>
+                    <select id="productCategory" name="category" required>
+                        <option value="">Select Category</option>
+                        <option value="cakes">Cakes</option>
+                        <option value="pastries">Pastries</option>
+                        <option value="breads">Breads</option>
+                        <option value="cookies">Cookies</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="productDescription">Description</label>
+                    <textarea id="productDescription" name="description" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="productImage">Image URL</label>
+                    <input type="url" id="productImage" name="image" required>
+                </div>
+                <button type="submit" class="submit-btn">Add Product</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Edit Product Modal -->
+    <div id="editProductModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Edit Product</h3>
+            <form id="editProductForm">
+                <input type="hidden" id="editProductId" name="id">
+                <div class="form-group">
+                    <label for="editProductName">Product Name</label>
+                    <input type="text" id="editProductName" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="editProductCategory">Category</label>
+                    <select id="editProductCategory" name="category" required>
+                        <option value="">Select Category</option>
+                        <option value="cakes">Cakes</option>
+                        <option value="pastries">Pastries</option>
+                        <option value="breads">Breads</option>
+                        <option value="cookies">Cookies</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="editProductDescription">Description</label>
+                    <textarea id="editProductDescription" name="description" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="editProductImage">Image URL</label>
+                    <input type="url" id="editProductImage" name="image" required>
+                </div>
+                <button type="submit" class="submit-btn">Update Product</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>

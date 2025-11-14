@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rutika's Bakery - Fresh Baked Delights</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">Rutika's <span>Bakery</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div class="auth-buttons">
+                    <button id="loginBtn">Login</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 class="bakery-name">Rutika's Bakery</h1>
+            <p class="hero-tagline">Freshly baked delights delivered to your doorstep</p>
+            <div class="scroll-indicator">
+                <div class="scroll-mouse">
+                    <div class="scroll-wheel"></div>
+                </div>
+                <div class="scroll-arrows">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Customer Panel -->
+    <section class="customer-panel" id="customerPanel">
+        <div class="panel-tabs">
+            <div class="panel-tab active" data-tab="profile">My Profile</div>
+            <div class="panel-tab" data-tab="orders">Order History</div>
+            <div class="panel-tab" data-tab="addresses">Addresses</div>
+        </div>
+        <div class="panel-content">
+            <div id="loginForm" class="auth-form">
+                <h3>Login to Your Account</h3>
+                <form id="loginFormElement">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <button type="submit" class="auth-submit-btn">Login</button>
+                </form>
+                <p>Don't have an account? <a href="#" id="showRegister">Register here</a></p>
+            </div>
+
+            <div id="registerForm" class="auth-form" style="display: none;">
+                <h3>Create an Account</h3>
+                <form id="registerFormElement">
+                    <div class="form-group">
+                        <label for="regName">Full Name</label>
+                        <input type="text" id="regName" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="regEmail">Email</label>
+                        <input type="email" id="regEmail" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="regPassword">Password</label>
+                        <input type="password" id="regPassword" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="regPhone">Phone</label>
+                        <input type="tel" id="regPhone" name="phone" required>
+                    </div>
+                    <button type="submit" class="auth-submit-btn">Register</button>
+                </form>
+                <p>Already have an account? <a href="#" id="showLogin">Login here</a></p>
+            </div>
+
+            <div id="profileContent" class="panel-tab-content" style="display: none;">
+                <!-- Profile content will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Admin Login Modal -->
+    <div id="adminLoginModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Admin Login</h3>
+            <form id="adminLoginForm">
+                <div class="form-group">
+                    <label for="adminId">Admin ID</label>
+                    <input type="text" id="adminId" name="adminId" required>
+                </div>
+                <div class="form-group">
+                    <label for="adminPassword">Password</label>
+                    <input type="password" id="adminPassword" name="password" required>
+                </div>
+                <button type="submit" class="auth-submit-btn">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal">
+        <div class="cart-header">
+            <h3 class="cart-title">Your Cart</h3>
+            <button class="close-cart">&times;</button>
+        </div>
+        <div class="cart-items">
+            <!-- Cart items will be dynamically added here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span class="total-price">₹0.00</span>
+            </div>
+            <button class="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div id="checkoutModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Checkout</h3>
+            <form id="checkoutForm">
+                <div class="form-group">
+                    <label for="checkoutName">Full Name</label>
+                    <input type="text" id="checkoutName" required>
+                </div>
+                <div class="form-group">
+                    <label for="checkoutAddress">Delivery Address</label>
+                    <textarea id="checkoutAddress" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="checkoutPhone">Phone Number</label>
+                    <input type="tel" id="checkoutPhone" required>
+                </div>
+                <div class="form-group">
+                    <label for="checkoutEmail">Email</label>
+                    <input type="email" id="checkoutEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="checkoutPayment">Payment Method</label>
+                    <select id="checkoutPayment" required>
+                        <option value="">Select Payment</option>
+                        <option value="card">Credit/Debit Card</option>
+                        <option value="cash">Cash on Delivery</option>
+                    </select>
+                </div>
+                <button type="submit" class="checkout-submit-btn">Place Order</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Rutika's Bakery</h3>
+                <p>Freshly baked goods made with love and the finest ingredients. Delivering happiness to your doorstep.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#" id="adminLoginLink">Admin Login</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Info</h3>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> Nagpur</li>
+                    <li><i class="fas fa-phone"></i> +91 91235-45679</li>
+                    <li><i class="fas fa-envelope"></i> info@rutikasbakery.com</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Opening Hours</h3>
+                <ul>
+                    <li>Monday - Friday: 7:00 AM - 8:00 PM</li>
+                    <li>Saturday: 8:00 AM - 9:00 PM</li>
+                    <li>Sunday: 8:00 AM - 6:00 PM</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 Rutika's Bakery. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
