@@ -1,6 +1,7 @@
 // API Base URL - Change this to your backend URL
-const API_BASE_URL = process.env.NODE_ENV === 'production'
-    ? 'https://rutika-bakery.onrender.com' : 'http://localhost:3000'; // Replace with your actual Render backend URL
+// Always call the backend deployed on Render:
+const API_BASE_URL = "https://rutikas-bakery-v6bl.onrender.com";
+ // Replace with your actual Render backend URL
 
 // Zomato Integration Configuration
 const ZOMATO_CONFIG = {
