@@ -1,6 +1,6 @@
 // API Base URL - Change this to your backend URL
 // Always call the backend deployed on Render:
-const API_BASE_URL = "https://rutika-bakery.onrender.com";
+const API_BASE_URL = "https://rutika-bakery.onrender.com/api";
  // Replace with your actual Render backend URL
 
 // Zomato Integration Configuration
